@@ -78,7 +78,7 @@ Widget displayCard(bool hasLikeButton, String title, String description,
 
 void showModalBottomsheet(BuildContext context) {
   var audioPlayer = AssetsAudioPlayer.newPlayer();
-  // bool isStoped = true;
+// bool isStoped = true;
   showModalBottomSheet(
       useRootNavigator: true,
       enableDrag: true,
@@ -89,7 +89,7 @@ void showModalBottomsheet(BuildContext context) {
           height: 800,
           decoration: BoxDecoration(
               color: Colors.transparent,
-              // shape: BoxShape.rectangle,
+// shape: BoxShape.rectangle,
 
               image: DecorationImage(
                   image: AssetImage("assets/images/bg.png"),
@@ -98,6 +98,13 @@ void showModalBottomsheet(BuildContext context) {
           child: ButtonBar(
             alignment: MainAxisAlignment.center,
             children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  CupertinoIcons.heart,
+                  color: Colors.white,
+                ),
+              ),
               IconButton(
                   icon: Icon(
                     CupertinoIcons.play_circle,
@@ -116,11 +123,19 @@ void showModalBottomsheet(BuildContext context) {
                     );
                   }),
               IconButton(
-                  onPressed: () => audioPlayer.stop(),
-                  icon: Icon(
-                    CupertinoIcons.stop_circle,
-                    color: Colors.white,
-                  ))
+                onPressed: () => audioPlayer.stop(),
+                icon: Icon(
+                  CupertinoIcons.pause_circle,
+                  color: Colors.white,
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  CupertinoIcons.slider_horizontal_3,
+                  color: Colors.white,
+                ),
+              ),
             ],
           ),
         );

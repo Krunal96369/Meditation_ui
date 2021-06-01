@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:meditation/widgets/display_card.dart';
 
 class MeditationScreen extends StatefulWidget {
   @override
@@ -8,6 +9,10 @@ class MeditationScreen extends StatefulWidget {
 }
 
 class _MeditationScreenState extends State<MeditationScreen> {
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +39,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
                 String time = document["time"].toString();
                 return Card(
                   child: ListTile(
+                    onTap: () => showModalBottomsheet(context),
                     tileColor: Colors.white,
                     leading: Container(
                       width: 70,

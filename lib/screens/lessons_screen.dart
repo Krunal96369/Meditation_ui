@@ -3,7 +3,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meditation/widgets/display_card.dart';
 
-class LessonScreen extends StatelessWidget {
+class LessonScreen extends StatefulWidget {
+  @override
+  _LessonScreenState createState() => _LessonScreenState();
+}
+
+class _LessonScreenState extends State<LessonScreen> {
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,6 +94,7 @@ class LessonScreen extends StatelessWidget {
                           String time = document["time"].toString();
                           return Card(
                             child: ListTile(
+                              onTap: () => showModalBottomsheet(context),
                               tileColor: Colors.white,
                               leading: Container(
                                 width: 70,
