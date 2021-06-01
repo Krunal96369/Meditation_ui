@@ -5,15 +5,20 @@ A Flutter App inspired from [UI Giants](https://www.uplabs.com/posts/meditation-
 ### 🔥&ensp; Preview
 |              Home Screen             | 
 | :----------------------------------: |
-|<img src="screenshots/HomeScreen.png" width="350" ></a><br>|| :----------------------------------: |
+|<img src="screenshots/HomeScreen.png" width="350" ></a><br>|
+| :----------------------------------: |
 |              Home Screen             |
-|<img src="screenshots/HomeScreen2.png" width="350"></a><br>|| :----------------------------------: |
+|<img src="screenshots/HomeScreen2.png" width="350"></a><br>|
+| :----------------------------------: |
 |              Practices Screen             |
-|<img src="screenshots/Practices.png" width="350"></a><br>|| :----------------------------------: |
-|              ProfileScreen Screen             |
-|<img src="screenshots/profile.png" width="350"></a><br>|| :----------------------------------: |
-|              Player Screen             |
-|<img src="screenshots/player.png" width="350"></a><br>|| :----------------------------------: |
+|<img src="screenshots/Practices.png" width="350"></a><br>|
+| :----------------------------------: |
+|              ProfileScreen Screen    |         |
+|<img src="screenshots/profile.png" width="350"></a><br>|
+| :----------------------------------: |
+|              Player Screen           |
+|<img src="screenshots/player.png" width="350"></a><br>|
+| :----------------------------------: |
 
 
 
