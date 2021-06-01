@@ -10,10 +10,10 @@ A Flutter App inspired from [UI Giants](https://www.uplabs.com/posts/meditation-
 |              Home Screen             |
 |<img src="screenshots/HomeScreen2.png" width="350"></a><br>|
 | :----------------------------------: |
-|              Practices Screen             |
+|              Practices Screen        |
 |<img src="screenshots/Practices.png" width="350"></a><br>|
 | :----------------------------------: |
-|              ProfileScreen Screen    |         |
+|              ProfileScreen Screen    |         
 |<img src="screenshots/profile.png" width="350"></a><br>|
 | :----------------------------------: |
 |              Player Screen           |
