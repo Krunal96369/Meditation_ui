@@ -9,6 +9,7 @@ class LessonScreen extends StatefulWidget {
 }
 
 class _LessonScreenState extends State<LessonScreen> {
+  @override
   void dispose() {
     super.dispose();
   }
@@ -47,6 +48,7 @@ class _LessonScreenState extends State<LessonScreen> {
                     return Container(
                       height: 200,
                       width: double.infinity,
+// TODO: Review: Always try to use ListView.builder to make lists efficient
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: snapshot.data!.docs.map((document) {
@@ -90,6 +92,7 @@ class _LessonScreenState extends State<LessonScreen> {
                     return Container(
                       height: 350,
                       child: ListView(
+                        // TODO: Review: Always try to use ListView.builder to make lists efficient
                         children: snapshot.data!.docs.map((document) {
                           String time = document["time"].toString();
                           return Card(

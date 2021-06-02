@@ -2,6 +2,8 @@ import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// TODO: Review: Using Widgets instead of method returning a widget is efficient as flutter engine can choose to avoid re render the widget if unnecessarry. 
+
 Widget displayCard(bool hasLikeButton, String title, String description,
     String time, String imgUrl, BuildContext context) {
   return Padding(

@@ -35,6 +35,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
           } else {
             // int len = snapshot.data!.size;
             return ListView(
+              // TODO: Review: Always try to use ListView.builder to make lists efficient
               children: snapshot.data!.docs.map((document) {
                 String time = document["time"].toString();
                 return Card(

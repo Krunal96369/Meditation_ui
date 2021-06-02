@@ -163,6 +163,8 @@ class _HomePageState extends State<HomePage> {
             height: 200,
             width: double.infinity,
             child: ListView(
+              // TODO: Review: Always try to use ListView.builder to make lists efficient
+
               scrollDirection: Axis.horizontal,
               children: snapshot.data!.docs.map((document) {
                 String time = document["time"].toString();
