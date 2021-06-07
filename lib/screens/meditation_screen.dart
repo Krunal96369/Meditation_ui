@@ -34,29 +34,33 @@ class _MeditationScreenState extends State<MeditationScreen> {
             );
           } else {
             // int len = snapshot.data!.size;
-            return ListView(
-              children: snapshot.data!.docs.map((document) {
-                String time = document["time"].toString();
-                return Card(
-                  child: ListTile(
-                    onTap: () => showModalBottomsheet(context),
-                    tileColor: Colors.white,
-                    leading: Container(
-                      width: 70,
-                      height: 50,
-                      child: Image.network(document["ilustration"]),
+            return ListView.builder(
+              itemCount: 11,
+              itemBuilder: (BuildContext context, int index) {
+                List<Widget> data = snapshot.data!.docs.map((document) {
+                  String time = document["time"].toString();
+                  return Card(
+                    child: ListTile(
+                      onTap: () => showModalBottomsheet(context),
+                      tileColor: Colors.white,
+                      leading: Container(
+                        width: 70,
+                        height: 50,
+                        child: Image.network(document['ilustration']),
+                      ),
+                      title: Text(
+                        document['title'],
+                      ),
+                      subtitle: Text("$time minutes"),
+                      trailing: IconButton(
+                        icon: Icon(CupertinoIcons.heart),
+                        onPressed: () {},
+                      ),
                     ),
-                    title: Text(
-                      document['title'],
-                    ),
-                    subtitle: Text("$time minutes"),
-                    trailing: IconButton(
-                      icon: Icon(CupertinoIcons.heart),
-                      onPressed: () {},
-                    ),
-                  ),
-                );
-              }).toList(),
+                  );
+                }).toList();
+                return Container(child: data[index]);
+              },
             );
           }
         },

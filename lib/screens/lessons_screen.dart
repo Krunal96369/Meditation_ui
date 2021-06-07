@@ -9,6 +9,7 @@ class LessonScreen extends StatefulWidget {
 }
 
 class _LessonScreenState extends State<LessonScreen> {
+  @override
   void dispose() {
     super.dispose();
   }
@@ -47,18 +48,25 @@ class _LessonScreenState extends State<LessonScreen> {
                     return Container(
                       height: 200,
                       width: double.infinity,
-                      child: ListView(
+                      child: ListView.builder(
+                        itemCount: 11,
+                        itemBuilder: (BuildContext context, int index) {
+                          List<Widget> data =
+                              snapshot.data!.docs.map((document) {
+                            String time = document["time"].toString();
+                            return displayCard(
+                                true,
+                                document['title'],
+                                document['description'],
+                                "$time minutes",
+                                document['url'],
+                                context);
+                          }).toList();
+                          return Container(
+                            child: data[index],
+                          );
+                        },
                         scrollDirection: Axis.horizontal,
-                        children: snapshot.data!.docs.map((document) {
-                          String time = document["time"].toString();
-                          return displayCard(
-                              true,
-                              document['title'],
-                              document['description'],
-                              "$time minutes",
-                              document['url'],
-                              context);
-                        }).toList(),
                       ),
                     );
                   }
@@ -89,29 +97,34 @@ class _LessonScreenState extends State<LessonScreen> {
                   } else {
                     return Container(
                       height: 350,
-                      child: ListView(
-                        children: snapshot.data!.docs.map((document) {
-                          String time = document["time"].toString();
-                          return Card(
-                            child: ListTile(
-                              onTap: () => showModalBottomsheet(context),
-                              tileColor: Colors.white,
-                              leading: Container(
-                                width: 70,
-                                height: 50,
-                                child: Image.network(document['ilustration']),
+                      child: ListView.builder(
+                        itemCount: 11,
+                        itemBuilder: (BuildContext context, int index) {
+                          List<Widget> data =
+                              snapshot.data!.docs.map((document) {
+                            String time = document["time"].toString();
+                            return Card(
+                              child: ListTile(
+                                onTap: () => showModalBottomsheet(context),
+                                tileColor: Colors.white,
+                                leading: Container(
+                                  width: 70,
+                                  height: 50,
+                                  child: Image.network(document['ilustration']),
+                                ),
+                                title: Text(
+                                  document['title'],
+                                ),
+                                subtitle: Text("$time minutes"),
+                                trailing: IconButton(
+                                  icon: Icon(CupertinoIcons.heart),
+                                  onPressed: () {},
+                                ),
                               ),
-                              title: Text(
-                                document['title'],
-                              ),
-                              subtitle: Text("$time minutes"),
-                              trailing: IconButton(
-                                icon: Icon(CupertinoIcons.heart),
-                                onPressed: () {},
-                              ),
-                            ),
-                          );
-                        }).toList(),
+                            );
+                          }).toList();
+                          return Container(child: data[index]);
+                        },
                       ),
                     );
                   }

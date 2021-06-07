@@ -30,9 +30,9 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   int _pageIndex = 0;
-  List<Widget> _screens = [
+  final List<Widget> _screens = [
     HomePage(),
     LessonScreen(),
     MeditationScreen(),

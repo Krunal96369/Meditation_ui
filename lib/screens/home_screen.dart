@@ -162,18 +162,24 @@ class _HomePageState extends State<HomePage> {
           return Container(
             height: 200,
             width: double.infinity,
-            child: ListView(
+            child: ListView.builder(
+              itemCount: 11,
+              itemBuilder: (BuildContext context, int index) {
+                List<Widget> data = snapshot.data!.docs.map((document) {
+                  String time = document["time"].toString();
+                  return displayCard(
+                      true,
+                      document['title'],
+                      document['description'],
+                      "$time minutes",
+                      document['url'],
+                      context);
+                }).toList();
+                return Container(
+                  child: data[index],
+                );
+              },
               scrollDirection: Axis.horizontal,
-              children: snapshot.data!.docs.map((document) {
-                String time = document["time"].toString();
-                return displayCard(
-                    false,
-                    document['title'],
-                    document['description'],
-                    "$time ",
-                    document['url'],
-                    context);
-              }).toList(),
             ),
           );
         }

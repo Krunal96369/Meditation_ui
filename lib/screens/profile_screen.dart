@@ -164,7 +164,7 @@ class ProfileScreen extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(18)),
                 ),
                 child: Image.network(
-                  "https://cdn.discordapp.com/attachments/829019459904733188/848887787414487040/unknown.png",
+                  "https://cdn.discordapp.com/attachments/851338763170742273/851338838986063892/unknown.png",
                   fit: BoxFit.fill,
                 ),
               )
